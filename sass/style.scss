@@ -1,0 +1,293 @@
+@import "mixin";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #fff;
+  color: #242424;
+}
+header {
+  padding: 1rem 2rem;
+  background-color: #333333;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .bars,
+  .close {
+    font-size: 2rem;
+    color: gray;
+    display: none;
+  }
+  .navbarItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #cartVal {
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      margin: 0 1rem;
+      display: none;
+    }
+  }
+}
+
+nav {
+  background-color: whitesmoke;
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+    li {
+      font-size: 1.5rem;
+      margin: 1rem 1.3rem;
+      color: gray;
+      cursor: pointer;
+      font-weight: 500;
+
+      &:hover {
+        color: #333333;
+      }
+    }
+  }
+}
+#airShoe,
+#tshirt {
+  @include background(#333333);
+
+  #fullSize {
+    @include fullSize();
+    .bgImg {
+      @include bgImg();
+    }
+    img {
+      @include img();
+    }
+  }
+  #smallSize {
+    @include smallSize();
+
+    h1 {
+      font-size: 5rem;
+      color: gray;
+    }
+    p {
+      font-size: 2rem;
+      color: gray;
+    }
+    img {
+      @include smallImg();
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+.loginModal {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  z-index: 1;
+  background-color: #fff;
+  width: 40rem;
+  height: 30rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  animation: loginModal 0.5s ease-in-out;
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    .loginModalClose {
+      font-size: 2rem;
+      color: gray;
+      cursor: pointer;
+    }
+  }
+  .loginForm {
+    text-align: center;
+    input {
+      width: 100%;
+      font-size: 1.5rem;
+      padding: 0.4rem 1rem;
+      margin-bottom: 2rem;
+    }
+    button {
+      background-color: #242424;
+      text-decoration: none;
+      border: none;
+      font-size: 2rem;
+      padding: 1rem 3rem;
+      color: gray;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+      margin-bottom: 2rem;
+    }
+  }
+  span {
+    font-size: 1.5rem;
+  }
+}
+.openLoginModal {
+  display: block;
+}
+
+footer {
+  background-color: #232f3e;
+  padding: 5rem 0;
+
+  ul {
+    list-style: none;
+
+    li {
+      font-size: 1.5rem;
+      color: gray;
+    }
+  }
+}
+
+#productSection {
+  padding: 2rem 0;
+  .productLinks {
+    background-color: #333333;
+    border-radius: 2rem;
+    padding: 1rem 0;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    margin: 0;
+    li {
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+  .allproducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .card {
+      width: 25rem;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+      margin: 1.5rem;
+      animation: products 0.5s ease-in-out;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+#toast {
+  div {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: #fff;
+    padding: 1rem 3rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333333;
+  }
+}
+
+@keyframes loginModal {
+  0% {
+    transform: translateY(-50rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fullSize {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes products {
+  0% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 50%;
+  }
+  .menuBar {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+  }
+  header {
+    flex-direction: column;
+  }
+  header .menu {
+    display: block;
+  }
+  header .navbarItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    .searchBar,
+    .loginBtn {
+      margin-bottom: 2rem;
+    }
+    .cart {
+      margin-left: 0;
+    }
+  }
+  .loginModal {
+    top: 25%;
+    left: 20%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  html {
+    font-size: 30%;
+  }
+  nav ul li {
+    margin: 0.7rem;
+  }
+  .loginModal {
+    top: 20%;
+    left: 20%;
+  }
+}

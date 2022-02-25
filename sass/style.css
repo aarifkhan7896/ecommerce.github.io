@@ -1,0 +1,462 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #fff;
+  color: #242424;
+}
+
+header {
+  padding: 1rem 2rem;
+  background-color: #333333;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .bars,
+header .close {
+  font-size: 2rem;
+  color: gray;
+  display: none;
+}
+
+header .navbarItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .navbarItems #cartVal {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  margin: 0 1rem;
+  display: none;
+}
+
+nav {
+  background-color: whitesmoke;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav ul li {
+  font-size: 1.5rem;
+  margin: 1rem 1.3rem;
+  color: gray;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+nav ul li:hover {
+  color: #333333;
+}
+
+#airShoe,
+#tshirt {
+  background-color: #333333;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#airShoe #fullSize,
+#tshirt #fullSize {
+  position: relative;
+  height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#airShoe #fullSize .bgImg,
+#tshirt #fullSize .bgImg {
+  position: absolute;
+  background-color: #525252;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+#airShoe #fullSize img,
+#tshirt #fullSize img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  -webkit-animation: fullSize 1s ease-in-out infinite;
+          animation: fullSize 1s ease-in-out infinite;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#airShoe #smallSize,
+#tshirt #smallSize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 60rem;
+}
+
+#airShoe #smallSize h1,
+#tshirt #smallSize h1 {
+  font-size: 5rem;
+  color: gray;
+}
+
+#airShoe #smallSize p,
+#tshirt #smallSize p {
+  font-size: 2rem;
+  color: gray;
+}
+
+#airShoe #smallSize img,
+#tshirt #smallSize img {
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background-color: #fff;
+  margin: 1rem;
+}
+
+#airShoe #smallSize img:hover,
+#tshirt #smallSize img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.loginModal {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  z-index: 1;
+  background-color: #fff;
+  width: 40rem;
+  height: 30rem;
+  padding: 2rem;
+  text-align: center;
+  -webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  -webkit-animation: loginModal 0.5s ease-in-out;
+          animation: loginModal 0.5s ease-in-out;
+}
+
+.loginModal .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginModal .heading h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.loginModal .heading .loginModalClose {
+  font-size: 2rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.loginModal .loginForm {
+  text-align: center;
+}
+
+.loginModal .loginForm input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.4rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.loginModal .loginForm button {
+  background-color: #242424;
+  text-decoration: none;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  color: gray;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+}
+
+.loginModal span {
+  font-size: 1.5rem;
+}
+
+.openLoginModal {
+  display: block;
+}
+
+footer {
+  background-color: #232f3e;
+  padding: 5rem 0;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+#productSection {
+  padding: 2rem 0;
+}
+
+#productSection .productLinks {
+  background-color: #333333;
+  border-radius: 2rem;
+  padding: 1rem 0;
+}
+
+#productSection ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: center;
+  margin: 0;
+}
+
+#productSection ul li a {
+  cursor: pointer;
+}
+
+#productSection .allproducts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#productSection .allproducts .card {
+  width: 25rem;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem;
+  -webkit-animation: products 0.5s ease-in-out;
+          animation: products 0.5s ease-in-out;
+}
+
+#productSection .allproducts .card:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#toast div {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: #fff;
+  padding: 1rem 3rem;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+@-webkit-keyframes loginModal {
+  0% {
+    -webkit-transform: translateY(-50rem);
+            transform: translateY(-50rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes loginModal {
+  0% {
+    -webkit-transform: translateY(-50rem);
+            transform: translateY(-50rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fullSize {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fullSize {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes products {
+  0% {
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes products {
+  0% {
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 50%;
+  }
+  .menuBar {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+  }
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .menu {
+    display: block;
+  }
+  header .navbarItems {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  header .navbarItems .searchBar,
+  header .navbarItems .loginBtn {
+    margin-bottom: 2rem;
+  }
+  header .navbarItems .cart {
+    margin-left: 0;
+  }
+  .loginModal {
+    top: 25%;
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  html {
+    font-size: 30%;
+  }
+  nav ul li {
+    margin: 0.7rem;
+  }
+  .loginModal {
+    top: 20%;
+    left: 20%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

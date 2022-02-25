@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./sass/style.css" />
+    <title>eShop</title>
+  </head>
+  <body>
+    <header>
+      <div class="header d-flex align-items-center">
+        <div>
+          <img
+            src="https://img.icons8.com/stickers/100/000000/add-shopping-cart--v2.png"
+            width="60px"
+            height="60px"
+          />
+        </div>
+        <div class="brand-name px-4">
+          <h1 class="fs-2 fw-bold text-warning">eShop</h1>
+          <span class="fs-4 text-muted">Online shopping made easy</span>
+        </div>
+      </div>
+      <div class="menuBar">
+        <div class="bars menu"><i class="fa-solid fa-bars"></i></div>
+        <div class="close"><i class="fa-solid fa-xmark"></i></div>
+      </div>
+      <div class="navbarItems">
+        <div class="searchBar me-5">
+          <input
+            class="form-control py-2 px-3 fs-5"
+            list="list"
+            name="search"
+            id="search"
+            placeholder="Search for products, brands and more.."
+          />
+          <datalist id="list">
+            <option value="Nike"></option>
+            <option value="Reebok"></option>
+            <option value="Adidas"></option>
+            <option value="Skechers"></option>
+            <option value="Puma"></option>
+          </datalist>
+        </div>
+        <div class="loginBtn me-5">
+          <a
+            href="#"
+            id="loginBtn"
+            class="btn btn-outline-secondary fs-4 px-5 py-1"
+            >Login</a
+          >
+        </div>
+        <div class="cart px-2">
+          <h3 class="text-muted d-flex align-items-center">
+            <i class="fa-solid fa-cart-shopping"></i> Cart
+            <span id="cartVal"></span>
+          </h3>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li id="men">Men</li>
+        <li>Women</li>
+        <li>Kids</li>
+        <li>Baby</li>
+        <li>Mobile</li>
+        <li>Laptop</li>
+      </ul>
+    </nav>
+    <section>
+      <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/slider1.jpg" class="d-block w-100" alt="img" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/slider2.jpg" class="d-block w-100" alt="img" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/slider3.jpg" class="d-block w-100" alt="img" />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section id="airShoe">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="fullSize">
+              <div class="bgImg"></div>
+              <img src="./img/air.png" alt="img" id="bigImage" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div id="smallSize">
+              <h1><span class="text-warning">Nike</span> Air</h1>
+              <p>Special price: $120</p>
+              <p>M.R.P.: <del>$200</del></p>
+              <div class="d-flex">
+                <img src="./img/air.png" alt="img" onclick="changeImg(this)" />
+                <img src="./img/air2.png" alt="img" onclick="changeImg(this)" />
+              </div>
+              <button
+                id="addCartBtn"
+                class="px-5 py-1 fs-2 mt-4 shadow btn btn-dark rounded addCartBtn"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tshirt" class="bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 order-lg-1 order-2">
+            <div id="smallSize">
+              <h1><span class="text-warning">Brooklyn</span> Tshirt</h1>
+              <p>Special price: $80</p>
+              <p>M.R.P.: <del>$100</del></p>
+              <div class="d-flex">
+                <img
+                  src="./img/tshirtW.png"
+                  alt="img"
+                  onclick="changeTshirtImg(this)"
+                />
+                <img
+                  src="./img/tshirtB.png"
+                  alt="img"
+                  onclick="changeTshirtImg(this)"
+                />
+              </div>
+              <button
+                id="addCartBtn"
+                class="px-5 py-1 fs-2 mt-4 shadow btn btn-dark rounded addCartBtn"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 order-lg-2 order-1">
+            <div id="fullSize">
+              <div class="bgImg"></div>
+              <img src="./img/tshirtW.png" alt="img" id="tshirtImage" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productSection">
+      <div class="container">
+        <div class="productLinks">
+          <ul>
+            <li>
+              <a data-filter="all" class="nav-link fs-4 text-light">All</a>
+            </li>
+            <li>
+              <a data-filter="shirt" class="nav-link fs-4 text-light">Shirt</a>
+            </li>
+            <li>
+              <a data-filter="tshirt" class="nav-link fs-4 text-light"
+                >Tshirt</a
+              >
+            </li>
+            <li>
+              <a data-filter="watch" class="nav-link fs-4 text-light">Watch</a>
+            </li>
+            <li>
+              <a data-filter="jewellery" class="nav-link fs-4 text-light"
+                >Jewellery</a
+              >
+            </li>
+            <li>
+              <a data-filter="suit" class="nav-link fs-4 text-light">Suit</a>
+            </li>
+          </ul>
+        </div>
+        <div class="allproducts"></div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 d-flex flex-column align-items-center py-4">
+            <img
+              src="./img/shipping.png"
+              alt=""
+              class="img-fluid"
+              width="50px"
+              height="50px"
+            />
+            <span class="featureTitle text-secondary fw-bold fs-4"
+              >FREE SHIPPING</span
+            >
+            <span class="featureDesc text-muted fs-5"
+              >Free worldwide shipping on all orders.</span
+            >
+          </div>
+          <div class="col-md-3 d-flex flex-column align-items-center py-4">
+            <img
+              src="./img/return.png"
+              alt=""
+              class="img-fluid"
+              width="50px"
+              height="50px"
+            />
+            <span class="featureTitle text-secondary fw-bold fs-4"
+              >30 DAYS RETURN</span
+            >
+            <span class="featureDesc text-muted fs-5"
+              >No question return and easy refund in 14 days.</span
+            >
+          </div>
+          <div class="col-md-3 d-flex flex-column align-items-center py-4">
+            <img
+              src="./img/gift.png"
+              alt=""
+              class="img-fluid"
+              width="50px"
+              height="50px"
+            />
+            <span class="featureTitle text-secondary fw-bold fs-4"
+              >GIFT CARDS</span
+            >
+            <span class="featureDesc text-muted fs-5"
+              >Buy gift cards and use coupon codes easily.</span
+            >
+          </div>
+          <div class="col-md-3 d-flex flex-column align-items-center py-4">
+            <img
+              src="./img/contact.png"
+              alt=""
+              class="img-fluid"
+              width="50px"
+              height="50px"
+            />
+            <span class="featureTitle text-secondary fw-bold fs-4"
+              >CONTACT US!</span
+            >
+            <span class="featureDesc text-muted fs-5"
+              >Keep in touch via email and support system.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <ul>
+              <li class="fw-bold text-light">Get to Know Us</li>
+              <li>About Us</li>
+              <li>Careers</li>
+              <li>Press Releases</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li class="fw-bold text-light">Connect with Us</li>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li class="fw-bold text-light">Let us Help You</li>
+              <li>Help</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="bottom bg-dark text-muted text-center py-3">
+      <h6 class="fs-4">Designed & Built by Aarif Khan</h6>
+      <span class="fs-5">&copy; copyright reserved</span>
+    </div>
+
+    <!-- login modal -->
+    <div class="loginModal">
+      <div class="heading">
+        <h3>Login to Continue</h3>
+        <div class="loginModalClose"><i class="fa-solid fa-xmark"></i></div>
+      </div>
+      <hr />
+      <div class="loginForm">
+        <input type="text" placeholder="Enter username or email" id="email" />
+        <input type="text" placeholder="Password" id="password" />
+        <button id="loginModalBtn">Login</button>
+      </div>
+      <span>New customer? <a href="#" id="signupBtn">Start here.</a></span>
+    </div>
+    <!-- login modal -->
+
+    <!-- Toast -->
+    <div id="toast"></div>
+    <!-- Toast -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+      integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
